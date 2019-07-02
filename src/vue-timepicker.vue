@@ -15,7 +15,11 @@ export default {
     format: {type: String},
     minuteInterval: {type: Number},
     secondInterval: {type: Number},
-    id: {type: String}
+    id: {type: String},
+    maxHour: {
+      type: Number,
+      default: 24
+    }
   },
 
   data () {
@@ -136,7 +140,7 @@ export default {
     },
 
     renderHoursList () {
-      const hoursCount = (this.hourType === 'h' || this.hourType === 'hh') ? 12 : 24
+      const hoursCount = (this.hourType === 'h' || this.hourType === 'hh') ? 12 : this.maxHour
       this.hours = []
       for (let i = 0; i < hoursCount; i++) {
         this.hours.push(this.formatValue(this.hourType, i))

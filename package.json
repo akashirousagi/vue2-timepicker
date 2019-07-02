@@ -6,6 +6,7 @@
     "dev": "node build/dev-server.js",
     "demo": "node build/demo.js",
     "minify": "node build/minify.js",
+    "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "repository": {
